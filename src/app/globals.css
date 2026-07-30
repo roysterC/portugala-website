@@ -1,26 +1,138 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ===== Design Tokens ===== */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  /* Palette — Editorial Luxury: sun-bleached limestone and Algarve pine */
+  --color-linen: #FDFAF5;
+  --color-linen-dark: #F5F0E8;
+  --color-espresso: #1A1612;
+  --color-espresso-light: #2A2420;
+  --color-pine: #2D5A3D;
+  --color-pine-light: #E8F0EA;
+  --color-sandstone: #B8956A;
+  --color-sandstone-light: #F5EDE2;
+  --color-stone: #6B5E4F;
+  --color-stone-light: #9B9083;
+  --color-border: #D8CEBC;
+
+  /* Semantic */
+  --background: var(--color-linen);
+  --background-alt: var(--color-linen-dark);
+  --foreground: var(--color-espresso);
+  --foreground-muted: var(--color-stone);
+  --accent: var(--color-pine);
+  --accent-surface: var(--color-pine-light);
+  --warm: var(--color-sandstone);
+  --warm-surface: var(--color-sandstone-light);
+  --border: var(--color-border);
+  --card-shadow: 0 1px 3px rgba(26, 22, 18, 0.04), 0 4px 12px rgba(26, 22, 18, 0.03);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #111010;
+    --background-alt: #1A1816;
+    --foreground: #E8E2D8;
+    --foreground-muted: #9B9083;
+    --accent: #6BAF7E;
+    --accent-surface: #1A2A1E;
+    --warm: #D4A86A;
+    --warm-surface: #2A2214;
+    --border: #2E2922;
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 }
+
+:root[data-theme="dark"] {
+  --background: #111010;
+  --background-alt: #1A1816;
+  --foreground: #E8E2D8;
+  --foreground-muted: #9B9083;
+  --accent: #6BAF7E;
+  --accent-surface: #1A2A1E;
+  --warm: #D4A86A;
+  --warm-surface: #2A2214;
+  --border: #2E2922;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="light"] {
+  --background: var(--color-linen);
+  --background-alt: var(--color-linen-dark);
+  --foreground: var(--color-espresso);
+  --foreground-muted: var(--color-stone);
+  --accent: var(--color-pine);
+  --accent-surface: var(--color-pine-light);
+  --warm: var(--color-sandstone);
+  --warm-surface: var(--color-sandstone-light);
+  --border: var(--color-border);
+  --card-shadow: 0 1px 3px rgba(26, 22, 18, 0.04), 0 4px 12px rgba(26, 22, 18, 0.03);
+}
+
+/* ===== Tailwind Theme ===== */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-accent: var(--accent);
+  --color-accent-surface: var(--accent-surface);
+  --color-warm: var(--warm);
+  --color-warm-surface: var(--warm-surface);
+  --color-border: var(--border);
+
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-plus-jakarta);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ===== Base Styles ===== */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), Georgia, serif;
+  text-wrap: balance;
+}
+
+/* ===== Film Grain Overlay ===== */
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ===== Signature accent rule ===== */
+
+.accent-rule {
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+/* ===== Reduced Motion ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
