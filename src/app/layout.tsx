@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { preconnect } from "react-dom";
 import { Playfair_Display, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import "./globals.css";
+
+preconnect("https://www.facebook.com");
+preconnect("https://www.instagram.com");
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",

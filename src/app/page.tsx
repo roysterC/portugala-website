@@ -37,7 +37,8 @@ export default function HomePage() {
           </p>
           <Link
             href="/villas"
-            className="group inline-flex items-center gap-3 rounded-full bg-white text-[#1A1612] px-7 py-4 text-sm font-semibold transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-white/90 active:scale-[0.98]"
+            prefetch={true}
+            className="group inline-flex items-center gap-3 rounded-full bg-white text-foreground px-7 py-4 text-sm font-semibold transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-white/90 active:scale-[0.98]"
           >
             Browse our villas
             <span className="flex items-center justify-center w-8 h-8 rounded-full bg-black/5 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1">
@@ -106,6 +107,7 @@ export default function HomePage() {
               </div>
               <Link
                 href="/villas"
+                prefetch={true}
                 className="hidden md:inline-flex text-sm font-medium text-accent hover:text-foreground transition-colors duration-300"
               >
                 View all &rarr;
@@ -172,6 +174,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/contact"
+              prefetch={true}
               className="group inline-flex items-center gap-3 rounded-full bg-accent text-white px-7 py-4 text-sm font-semibold transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-accent/90 active:scale-[0.98]"
             >
               Contact us

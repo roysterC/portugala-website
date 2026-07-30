@@ -60,9 +60,10 @@ export default function VillasPage() {
                   <FadeIn key={villa.slug} delay={i * 80}>
                     <Link
                       href={`/villas/${villa.slug}`}
+                      prefetch={true}
                       className="group block"
                     >
-                      <div className="rounded-[1.5rem] bg-border/30 p-1.5 ring-1 ring-border/50 transition-shadow duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:ring-accent/30 hover:shadow-lg">
+                      <div className="villa-card rounded-[1.5rem] bg-border/30 p-1.5 ring-1 ring-border/50 transition-shadow duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:ring-accent/30 hover:shadow-lg">
                         <div className="rounded-[calc(1.5rem-6px)] overflow-hidden bg-background">
                           <div className="relative aspect-[4/3] overflow-hidden">
                             <Image

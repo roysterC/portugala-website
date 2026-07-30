@@ -1,7 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
+
+const Lightbox = dynamic(() => import('./lightbox').then((m) => m.Lightbox), {
+  ssr: false,
+});
 
 interface ImageGalleryProps {
   images: string[];
@@ -61,79 +66,22 @@ export function ImageGallery({ images, name }: ImageGalleryProps) {
         </div>
       </section>
 
-      {/* Lightbox */}
+      {/* Lightbox — dynamically loaded */}
       {lightboxIndex !== null && (
-        <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center overscroll-contain"
-          onClick={() => setLightboxIndex(null)}
-          onKeyDown={(e) => {
-            if (e.key === 'Escape') setLightboxIndex(null);
-            if (e.key === 'ArrowRight')
-              setLightboxIndex((p) =>
-                p !== null ? (p + 1) % images.length : null,
-              );
-            if (e.key === 'ArrowLeft')
-              setLightboxIndex((p) =>
-                p !== null ? (p - 1 + images.length) % images.length : null,
-              );
-          }}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Image gallery"
-          tabIndex={0}
-        >
-          <button
-            type="button"
-            onClick={() => setLightboxIndex(null)}
-            className="absolute top-6 right-6 text-white/80 hover:text-white text-2xl z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm"
-            aria-label="Close gallery"
-          >
-            &times;
-          </button>
-
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              setLightboxIndex(
-                (lightboxIndex - 1 + images.length) % images.length,
-              );
-            }}
-            className="absolute left-4 md:left-8 text-white/80 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm z-10"
-            aria-label="Previous image"
-          >
-            &lsaquo;
-          </button>
-
-          <div
-            className="relative w-[90vw] h-[80vh] max-w-5xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={images[lightboxIndex]}
-              alt={`${name} — photo ${lightboxIndex + 1}`}
-              fill
-              className="object-contain"
-              sizes="90vw"
-            />
-          </div>
-
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              setLightboxIndex((lightboxIndex + 1) % images.length);
-            }}
-            className="absolute right-4 md:right-8 text-white/80 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm z-10"
-            aria-label="Next image"
-          >
-            &rsaquo;
-          </button>
-
-          <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-sm font-mono">
-            {lightboxIndex + 1} / {images.length}
-          </p>
-        </div>
+        <Lightbox
+          images={images}
+          name={name}
+          index={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onPrev={() =>
+            setLightboxIndex(
+              (lightboxIndex - 1 + images.length) % images.length,
+            )
+          }
+          onNext={() =>
+            setLightboxIndex((lightboxIndex + 1) % images.length)
+          }
+        />
       )}
     </>
   );

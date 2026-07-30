@@ -3,71 +3,72 @@
 /* ===== Design Tokens ===== */
 
 :root {
-  /* Palette — Editorial Luxury: sun-bleached limestone and Algarve pine */
-  --color-linen: #FDFAF5;
-  --color-linen-dark: #F5F0E8;
-  --color-espresso: #1A1612;
-  --color-espresso-light: #2A2420;
-  --color-pine: #2D5A3D;
-  --color-pine-light: #E8F0EA;
-  --color-sandstone: #B8956A;
-  --color-sandstone-light: #F5EDE2;
-  --color-stone: #6B5E4F;
-  --color-stone-light: #9B9083;
-  --color-border: #D8CEBC;
+  /* Palette — Algarve coast: ocean, terracotta, golden sand */
+  --color-white: #FFFFFF;
+  --color-cloud: #F8F9FA;
+  --color-navy: #1E293B;
+  --color-navy-light: #334155;
+  --color-ocean: #1A6B8A;
+  --color-ocean-light: #E0F2F8;
+  --color-terracotta: #D4704A;
+  --color-terracotta-light: #FDE8DE;
+  --color-sand: #D4A24C;
+  --color-slate: #64748B;
+  --color-slate-light: #94A3B8;
+  --color-border: #E2E8F0;
 
   /* Semantic */
-  --background: var(--color-linen);
-  --background-alt: var(--color-linen-dark);
-  --foreground: var(--color-espresso);
-  --foreground-muted: var(--color-stone);
-  --accent: var(--color-pine);
-  --accent-surface: var(--color-pine-light);
-  --warm: var(--color-sandstone);
-  --warm-surface: var(--color-sandstone-light);
+  --background: var(--color-white);
+  --background-alt: var(--color-cloud);
+  --foreground: var(--color-navy);
+  --foreground-muted: var(--color-slate);
+  --accent: var(--color-ocean);
+  --accent-surface: var(--color-ocean-light);
+  --warm: var(--color-terracotta);
+  --warm-surface: var(--color-terracotta-light);
   --border: var(--color-border);
-  --card-shadow: 0 1px 3px rgba(26, 22, 18, 0.04), 0 4px 12px rgba(26, 22, 18, 0.03);
+  --card-shadow: 0 1px 3px rgba(30, 41, 59, 0.04), 0 4px 12px rgba(30, 41, 59, 0.03);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #111010;
-    --background-alt: #1A1816;
-    --foreground: #E8E2D8;
-    --foreground-muted: #9B9083;
-    --accent: #6BAF7E;
-    --accent-surface: #1A2A1E;
-    --warm: #D4A86A;
-    --warm-surface: #2A2214;
-    --border: #2E2922;
-    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
+    --background: #0F1419;
+    --background-alt: #1A2332;
+    --foreground: #E2E8F0;
+    --foreground-muted: #94A3B8;
+    --accent: #38BDF8;
+    --accent-surface: #0C2D48;
+    --warm: #F0926A;
+    --warm-surface: #3D1F12;
+    --border: #1E293B;
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 }
 
 :root[data-theme="dark"] {
-  --background: #111010;
-  --background-alt: #1A1816;
-  --foreground: #E8E2D8;
-  --foreground-muted: #9B9083;
-  --accent: #6BAF7E;
-  --accent-surface: #1A2A1E;
-  --warm: #D4A86A;
-  --warm-surface: #2A2214;
-  --border: #2E2922;
-  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
+  --background: #0F1419;
+  --background-alt: #1A2332;
+  --foreground: #E2E8F0;
+  --foreground-muted: #94A3B8;
+  --accent: #38BDF8;
+  --accent-surface: #0C2D48;
+  --warm: #F0926A;
+  --warm-surface: #3D1F12;
+  --border: #1E293B;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 :root[data-theme="light"] {
-  --background: var(--color-linen);
-  --background-alt: var(--color-linen-dark);
-  --foreground: var(--color-espresso);
-  --foreground-muted: var(--color-stone);
-  --accent: var(--color-pine);
-  --accent-surface: var(--color-pine-light);
-  --warm: var(--color-sandstone);
-  --warm-surface: var(--color-sandstone-light);
+  --background: var(--color-white);
+  --background-alt: var(--color-cloud);
+  --foreground: var(--color-navy);
+  --foreground-muted: var(--color-slate);
+  --accent: var(--color-ocean);
+  --accent-surface: var(--color-ocean-light);
+  --warm: var(--color-terracotta);
+  --warm-surface: var(--color-terracotta-light);
   --border: var(--color-border);
-  --card-shadow: 0 1px 3px rgba(26, 22, 18, 0.04), 0 4px 12px rgba(26, 22, 18, 0.03);
+  --card-shadow: 0 1px 3px rgba(30, 41, 59, 0.04), 0 4px 12px rgba(30, 41, 59, 0.03);
 }
 
 /* ===== Tailwind Theme ===== */
@@ -125,6 +126,13 @@ body::after {
   height: 2px;
   background: var(--accent);
   margin-bottom: 1.25rem;
+}
+
+/* ===== Content Visibility ===== */
+
+.villa-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 420px;
 }
 
 /* ===== Reduced Motion ===== */
