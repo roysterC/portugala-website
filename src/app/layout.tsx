@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   other: {
-    "color-scheme": "light dark",
+    "color-scheme": "light",
   },
 };
 
@@ -52,6 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="light"
       className={`${playfair.variable} ${plusJakarta.variable} ${geistMono.variable}`}
     >
       <body className="min-h-dvh flex flex-col antialiased">
