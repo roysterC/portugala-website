@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# agent skills: symlink proxies are machine-local (absolute paths) and
+# regenerable via `npx skills experimental_install`. .agents/skills and
+# skills-lock.json are the source of truth and stay tracked.
+/.claude/skills
+/.cursor/skills
