@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react';
+
 const S = 'w-4 h-4 stroke-current fill-none stroke-[1.5]';
 
 function Snowflake() {
@@ -124,7 +126,7 @@ function Sun() {
   );
 }
 
-export const AMENITY_ICONS: Record<string, { label: string; icon: () => JSX.Element }> = {
+export const AMENITY_ICONS: Record<string, { label: string; icon: () => ReactElement }> = {
   'air-conditioning': { label: 'Air Conditioning', icon: Snowflake },
   'wifi': { label: 'Wi-Fi', icon: Wifi },
   'private-pool': { label: 'Private Pool', icon: Pool },
