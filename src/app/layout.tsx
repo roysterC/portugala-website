@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { preconnect } from "react-dom";
 import { Playfair_Display, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/navbar";
@@ -39,9 +39,11 @@ export const metadata: Metadata = {
     locale: "en_GB",
     type: "website",
   },
-  other: {
-    "color-scheme": "light",
-  },
+};
+
+export const viewport: Viewport = {
+  colorScheme: "light",
+  themeColor: "#FFFFFF",
 };
 
 export default function RootLayout({

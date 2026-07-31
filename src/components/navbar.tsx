@@ -47,18 +47,18 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setOpen(!open)}
-            className="md:hidden relative w-6 h-5 flex flex-col justify-center items-center"
+            className="md:hidden relative w-9 h-9 -mr-2 flex flex-col justify-center items-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >
             <span
-              className={`block h-[1.5px] w-5 bg-foreground rounded-full transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] absolute ${
-                open ? 'rotate-45 top-[9px]' : 'top-[4px]'
+              className={`block h-[1.5px] w-5 bg-foreground rounded-full absolute transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+                open ? 'rotate-45' : '-translate-y-[3px]'
               }`}
             />
             <span
-              className={`block h-[1.5px] w-5 bg-foreground rounded-full transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] absolute ${
-                open ? '-rotate-45 top-[9px]' : 'top-[14px]'
+              className={`block h-[1.5px] w-5 bg-foreground rounded-full absolute transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+                open ? '-rotate-45' : 'translate-y-[3px]'
               }`}
             />
           </button>
@@ -67,7 +67,8 @@ export function Navbar() {
 
       {/* Mobile overlay */}
       <div
-        className={`fixed inset-0 z-30 bg-background/95 backdrop-blur-2xl transition-opacity duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] md:hidden ${
+        inert={!open}
+        className={`fixed inset-0 z-30 bg-background/95 backdrop-blur-2xl overscroll-contain transition-opacity duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] md:hidden ${
           open
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'

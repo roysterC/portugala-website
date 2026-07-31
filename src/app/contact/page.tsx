@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { CONTACT } from '@/lib/types';
 import { FadeIn } from '@/components/fade-in';
+import { ContactForm } from '@/components/contact-form';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="px-6 py-16 md:py-20">
+    <section className="px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
         {/* Info */}
         <FadeIn>
@@ -31,7 +32,7 @@ export default function ContactPage() {
                 </p>
                 <a
                   href={`mailto:${CONTACT.email}`}
-                  className="text-lg font-medium hover:text-accent transition-colors duration-300"
+                  className="text-lg font-medium hover:text-accent transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
                 >
                   {CONTACT.email}
                 </a>
@@ -43,7 +44,7 @@ export default function ContactPage() {
                 </p>
                 <a
                   href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}
-                  className="text-lg font-medium hover:text-accent transition-colors duration-300"
+                  className="text-lg font-medium hover:text-accent transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
                 >
                   {CONTACT.phone}
                 </a>
@@ -55,7 +56,7 @@ export default function ContactPage() {
                 </p>
                 <a
                   href={`tel:${CONTACT.mobile.replace(/\s/g, '')}`}
-                  className="text-lg font-medium hover:text-accent transition-colors duration-300"
+                  className="text-lg font-medium hover:text-accent transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
                 >
                   {CONTACT.mobile}
                 </a>
@@ -73,7 +74,7 @@ export default function ContactPage() {
                   href={CONTACT.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground-muted hover:text-accent transition-colors duration-300"
+                  className="text-foreground-muted hover:text-accent transition-colors duration-300 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
                   aria-label="Facebook"
                 >
                   <svg
@@ -89,7 +90,7 @@ export default function ContactPage() {
                   href={CONTACT.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground-muted hover:text-accent transition-colors duration-300"
+                  className="text-foreground-muted hover:text-accent transition-colors duration-300 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
                   aria-label="Instagram"
                 >
                   <svg
@@ -108,90 +109,7 @@ export default function ContactPage() {
 
         {/* Form */}
         <FadeIn delay={150}>
-          <div className="rounded-[1.5rem] bg-border/30 p-1.5 ring-1 ring-border/50">
-            <div className="rounded-[calc(1.5rem-6px)] bg-background-alt p-8">
-              <h2 className="font-display text-xl font-semibold mb-6">
-                Send us a message
-              </h2>
-              <form className="space-y-5">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium mb-1.5"
-                  >
-                    Name
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    autoComplete="name"
-                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-foreground-muted/50 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors"
-                    placeholder="Your name…"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium mb-1.5"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    autoComplete="email"
-                    spellCheck={false}
-                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-foreground-muted/50 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors"
-                    placeholder="you@example.com"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium mb-1.5"
-                  >
-                    Subject
-                  </label>
-                  <input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-foreground-muted/50 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors"
-                    placeholder="Villa enquiry…"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium mb-1.5"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    required
-                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-foreground-muted/50 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors resize-none"
-                    placeholder="Tell us about your ideal Algarve holiday…"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="group inline-flex items-center gap-3 rounded-full bg-accent text-white px-7 py-4 text-sm font-semibold transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-accent/90 active:scale-[0.98]"
-                >
-                  Send message
-                  <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/15 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1">
-                    &rarr;
-                  </span>
-                </button>
-              </form>
-            </div>
-          </div>
+          <ContactForm />
         </FadeIn>
       </div>
     </section>

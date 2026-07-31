@@ -132,7 +132,7 @@ export default async function VillaDetailPage({
                     href={villa.supercontrolUrl ?? 'https://www.portugala.com'}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-center gap-2 w-full rounded-full bg-accent text-white px-6 py-4 text-sm font-semibold transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-accent/90 active:scale-[0.98]"
+                    className="group flex items-center justify-center gap-2 w-full rounded-full bg-accent text-white px-6 py-4 text-sm font-semibold transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-accent/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
                   >
                     Check availability
                     <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/15 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1">
@@ -199,7 +199,7 @@ export default async function VillaDetailPage({
                 </p>
                 <Link
                   href="/contact"
-                  className="text-sm font-medium text-accent hover:text-foreground transition-colors duration-300"
+                  className="text-sm font-medium text-accent hover:text-foreground transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
                 >
                   Get in touch &rarr;
                 </Link>

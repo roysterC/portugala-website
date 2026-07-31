@@ -28,7 +28,8 @@ export function ImageGallery({ images, name }: ImageGalleryProps) {
             <button
               type="button"
               onClick={() => setLightboxIndex(0)}
-              className="relative col-span-2 row-span-2 cursor-pointer overflow-hidden"
+              aria-label={`View ${name} photo 1 in fullscreen gallery`}
+              className="relative col-span-2 row-span-2 cursor-pointer overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset"
             >
               <Image
                 src={display[0]}
@@ -46,7 +47,8 @@ export function ImageGallery({ images, name }: ImageGalleryProps) {
                 key={src}
                 type="button"
                 onClick={() => setLightboxIndex(i + 1)}
-                className="relative cursor-pointer overflow-hidden"
+                aria-label={`View ${name} photo ${i + 2} in fullscreen gallery`}
+                className="relative cursor-pointer overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset"
               >
                 <Image
                   src={src}

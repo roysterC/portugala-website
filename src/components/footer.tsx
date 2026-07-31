@@ -29,7 +29,7 @@ export function Footer() {
               <li key={href}>
                 <Link
                   href={href}
-                  className="text-sm text-foreground-muted hover:text-foreground transition-colors duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                  className="text-sm text-foreground-muted hover:text-foreground transition-colors duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
                 >
                   {label}
                 </Link>
@@ -47,7 +47,7 @@ export function Footer() {
             <li>
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="hover:text-foreground transition-colors duration-300"
+                className="hover:text-foreground transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
               >
                 {CONTACT.email}
               </a>
@@ -55,7 +55,7 @@ export function Footer() {
             <li>
               <a
                 href={`tel:${CONTACT.mobile.replace(/\s/g, '')}`}
-                className="hover:text-foreground transition-colors duration-300"
+                className="hover:text-foreground transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
               >
                 {CONTACT.mobile}
               </a>
@@ -67,7 +67,7 @@ export function Footer() {
               href={CONTACT.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground-muted hover:text-foreground transition-colors duration-300"
+              className="text-foreground-muted hover:text-foreground transition-colors duration-300 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
               aria-label="Follow on Facebook"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -78,7 +78,7 @@ export function Footer() {
               href={CONTACT.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground-muted hover:text-foreground transition-colors duration-300"
+              className="text-foreground-muted hover:text-foreground transition-colors duration-300 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
               aria-label="Follow on Instagram"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -89,7 +89,10 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border py-6 text-center text-xs text-foreground-muted">
+      <div
+        className="border-t border-border py-6 text-center text-xs text-foreground-muted"
+        suppressHydrationWarning
+      >
         &copy; {new Date().getFullYear()} Portugala. All rights reserved.
       </div>
     </footer>

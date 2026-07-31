@@ -38,7 +38,7 @@ export default function HomePage() {
           <Link
             href="/villas"
             prefetch={true}
-            className="group inline-flex items-center gap-3 rounded-full bg-white text-foreground px-7 py-4 text-sm font-semibold transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-white/90 active:scale-[0.98]"
+            className="group inline-flex items-center gap-3 rounded-full bg-white text-foreground px-7 py-4 text-sm font-semibold transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-white/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/40"
           >
             Browse our villas
             <span className="flex items-center justify-center w-8 h-8 rounded-full bg-black/5 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1">
@@ -108,7 +108,7 @@ export default function HomePage() {
               <Link
                 href="/villas"
                 prefetch={true}
-                className="hidden md:inline-flex text-sm font-medium text-accent hover:text-foreground transition-colors duration-300"
+                className="hidden md:inline-flex text-sm font-medium text-accent hover:text-foreground transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
               >
                 View all &rarr;
               </Link>
@@ -118,7 +118,11 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featured.map((villa, i) => (
               <FadeIn key={villa.slug} delay={i * 100}>
-                <Link href={`/villas/${villa.slug}`} className="group block">
+                <Link
+                  href={`/villas/${villa.slug}`}
+                  prefetch={true}
+                  className="group block rounded-[1.5rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
+                >
                   <div className="rounded-[1.5rem] bg-border/30 p-1.5 ring-1 ring-border/50 transition-shadow duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:ring-accent/30 hover:shadow-lg">
                     <div className="rounded-[calc(1.5rem-6px)] overflow-hidden bg-background">
                       <div className="relative aspect-[4/3] overflow-hidden">
@@ -134,7 +138,7 @@ export default function HomePage() {
                         <p className="text-xs text-foreground-muted mb-1">
                           {villa.location}
                         </p>
-                        <h3 className="font-display text-lg font-semibold mb-2">
+                        <h3 className="font-display text-lg font-semibold mb-2 transition-colors duration-300 group-hover:text-highlight">
                           {villa.name}
                         </h3>
                         <div className="flex gap-3 text-xs text-foreground-muted font-mono">
@@ -153,7 +157,10 @@ export default function HomePage() {
           </div>
 
           <div className="mt-10 text-center md:hidden">
-            <Link href="/villas" className="text-sm font-medium text-accent">
+            <Link
+              href="/villas"
+              className="text-sm font-medium text-accent rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
+            >
               View all villas &rarr;
             </Link>
           </div>
@@ -175,7 +182,7 @@ export default function HomePage() {
             <Link
               href="/contact"
               prefetch={true}
-              className="group inline-flex items-center gap-3 rounded-full bg-accent text-white px-7 py-4 text-sm font-semibold transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-accent/90 active:scale-[0.98]"
+              className="group inline-flex items-center gap-3 rounded-full bg-accent text-white px-7 py-4 text-sm font-semibold transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-accent/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
             >
               Contact us
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/15 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1">

@@ -61,7 +61,7 @@ export default function VillasPage() {
                     <Link
                       href={`/villas/${villa.slug}`}
                       prefetch={true}
-                      className="group block"
+                      className="group block rounded-[1.5rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
                     >
                       <div className="villa-card rounded-[1.5rem] bg-border/30 p-1.5 ring-1 ring-border/50 transition-shadow duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:ring-accent/30 hover:shadow-lg">
                         <div className="rounded-[calc(1.5rem-6px)] overflow-hidden bg-background">
@@ -75,7 +75,7 @@ export default function VillasPage() {
                             />
                           </div>
                           <div className="p-5">
-                            <h3 className="font-display text-lg font-semibold mb-2">
+                            <h3 className="font-display text-lg font-semibold mb-2 transition-colors duration-300 group-hover:text-highlight">
                               {villa.name}
                             </h3>
                             <p className="text-sm text-foreground-muted leading-relaxed mb-3 line-clamp-2">
