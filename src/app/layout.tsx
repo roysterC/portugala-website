@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { preconnect } from "react-dom";
-import { Playfair_Display, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
+import { Fraunces, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import "./globals.css";
@@ -8,10 +8,11 @@ import "./globals.css";
 preconnect("https://www.facebook.com");
 preconnect("https://www.instagram.com");
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
   display: "swap",
+  axes: ["opsz"], // enable optical sizing (weight axis is included by default)
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -55,7 +56,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="light"
-      className={`${playfair.variable} ${plusJakarta.variable} ${geistMono.variable}`}
+      className={`${fraunces.variable} ${plusJakarta.variable} ${geistMono.variable}`}
     >
       <body className="min-h-dvh flex flex-col antialiased">
         <a
