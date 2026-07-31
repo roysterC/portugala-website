@@ -46,15 +46,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Values — editorial split */}
       <section className="px-6 py-28 md:py-40 bg-background-alt">
-        <div className="mx-auto max-w-6xl">
-          <FadeIn>
-            <h2 className="font-display text-3xl md:text-5xl font-bold mb-14 max-w-2xl leading-[1.1]">
-              Holiday rentals, done properly
-            </h2>
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="lg:col-span-5 lg:sticky lg:top-28 self-start">
+            <FadeIn>
+              <h2 className="font-display text-3xl md:text-5xl font-bold leading-[1.1]">
+                Holiday rentals, done properly
+              </h2>
+            </FadeIn>
+          </div>
+          <div className="lg:col-span-7">
             {[
               {
                 title: 'Personal knowledge',
@@ -70,12 +72,14 @@ export default function AboutPage() {
               },
             ].map(({ title, text }, i) => (
               <FadeIn key={title} delay={i * 100}>
-                <h3 className="font-body text-base font-semibold mb-3">
-                  {title}
-                </h3>
-                <p className="text-sm text-foreground-muted leading-relaxed">
-                  {text}
-                </p>
+                <div className="border-t border-border pt-6 pb-8 last:pb-0">
+                  <h3 className="font-display text-xl font-semibold mb-2">
+                    {title}
+                  </h3>
+                  <p className="text-foreground-muted leading-relaxed max-w-md">
+                    {text}
+                  </p>
+                </div>
               </FadeIn>
             ))}
           </div>
