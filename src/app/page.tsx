@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { villas } from "@/lib/villas";
 import { FadeIn } from "@/components/fade-in";
+import { AzulejoDivider } from "@/components/azulejo-divider";
 
 export default function HomePage() {
   const featured = villas.slice(0, 3);
@@ -47,6 +48,9 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      {/* Signature — azulejo tile course */}
+      <AzulejoDivider label="A Portuguese azulejo tile motif" />
 
       {/* Value proposition */}
       <section className="px-6 py-28 md:py-40">
