@@ -50,7 +50,6 @@ export default function AboutPage() {
       <section className="px-6 py-28 md:py-40 bg-background-alt">
         <div className="mx-auto max-w-6xl">
           <FadeIn>
-            <span className="accent-rule" />
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-14 max-w-2xl leading-[1.1]">
               Holiday rentals, done properly
             </h2>
@@ -101,7 +100,6 @@ export default function AboutPage() {
           </FadeIn>
           <FadeIn delay={100}>
             <div className="order-1 lg:order-2">
-              <span className="accent-rule" />
               <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 leading-[1.1]">
                 Why the Algarve?
               </h2>

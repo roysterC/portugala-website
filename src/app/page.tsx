@@ -52,7 +52,6 @@ export default function HomePage() {
       <section className="px-6 py-28 md:py-40">
         <div className="mx-auto max-w-6xl">
           <FadeIn>
-            <span className="accent-rule" />
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 max-w-2xl leading-[1.1]">
               We stay in every villa we offer
             </h2>
@@ -100,7 +99,6 @@ export default function HomePage() {
           <FadeIn>
             <div className="flex items-end justify-between mb-14">
               <div>
-                <span className="accent-rule" />
                 <h2 className="font-display text-3xl md:text-5xl font-bold">
                   Our villas
                 </h2>
@@ -108,9 +106,12 @@ export default function HomePage() {
               <Link
                 href="/villas"
                 prefetch={true}
-                className="hidden md:inline-flex text-sm font-medium text-accent hover:text-foreground transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
+                className="group hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-foreground transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
               >
-                View all &rarr;
+                <span className="link-cta">View all</span>
+                <span className="transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5">
+                  &rarr;
+                </span>
               </Link>
             </div>
           </FadeIn>
@@ -159,9 +160,12 @@ export default function HomePage() {
           <div className="mt-10 text-center md:hidden">
             <Link
               href="/villas"
-              className="text-sm font-medium text-accent rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
+              className="group inline-flex items-center gap-1.5 text-sm font-medium text-accent rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
             >
-              View all villas &rarr;
+              <span className="link-cta">View all villas</span>
+              <span className="transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5">
+                &rarr;
+              </span>
             </Link>
           </div>
         </div>
@@ -171,7 +175,6 @@ export default function HomePage() {
       <section className="px-6 py-28 md:py-40">
         <FadeIn>
           <div className="mx-auto max-w-3xl text-center">
-            <span className="accent-rule mx-auto" />
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-5">
               Ready for the Algarve?
             </h2>

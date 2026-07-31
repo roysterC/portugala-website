@@ -199,9 +199,12 @@ export default async function VillaDetailPage({
                 </p>
                 <Link
                   href="/contact"
-                  className="text-sm font-medium text-accent hover:text-foreground transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
+                  className="group inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-foreground transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2"
                 >
-                  Get in touch &rarr;
+                  <span className="link-cta">Get in touch</span>
+                  <span className="transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5">
+                    &rarr;
+                  </span>
                 </Link>
               </div>
             </FadeIn>

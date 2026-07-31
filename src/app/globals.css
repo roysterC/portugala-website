@@ -133,6 +133,28 @@ body::after {
   margin-bottom: 1.25rem;
 }
 
+/* ===== Secondary link CTA — animated underline ===== */
+/* Primary actions are pill buttons; secondary actions use this. */
+
+.link-cta {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s cubic-bezier(0.32, 0.72, 0, 1),
+    color 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.link-cta:hover {
+  background-size: 100% 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-cta {
+    transition: none;
+  }
+}
+
 /* ===== Content Visibility ===== */
 
 .villa-card {
