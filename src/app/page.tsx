@@ -12,7 +12,7 @@ export default function HomePage() {
       {/* Hero — editorial split */}
       <section className="relative min-h-[90dvh] flex items-center px-6 overflow-hidden -mt-24">
         <Image
-          src="/images/villas/borboleta/06.jpg"
+          src="/images/villas/estrelicia-3bed/05.jpg"
           alt="Algarve coastline with golden cliffs and turquoise sea"
           fill
           priority
